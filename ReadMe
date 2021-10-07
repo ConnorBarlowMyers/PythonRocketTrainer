@@ -1,0 +1,12 @@
+Make sure to change the map directory in the Training_Objects.py file
+
+Currently crashes after you've clicked run, but will complete the full training cycle.
+
+You'll need:
+
+Python
+pynput module
+PyQt lib
+
+Rocket League
+Bakkesmod installed and working (press f6 ingame, if the console opens then its working)
