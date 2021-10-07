@@ -1,1 +1,56 @@
-# Python Rocket League Trainer
+Python Rocket League Trainer
+
+Allows for custom training sequences (both workshop maps and training packs) to be loaded in a predefined sequence for repeated training. User can define the length of each exercise and the contents which can be left blank (completely random training), have a catagory assigned (e.g. a rings map) or have a specific training pack or workshop map defined.
+
+Requirements:
+  - Rocket League
+  - Bakkesmod plugin
+  
+  - Python
+  - PyQt5
+  - pynput
+  
+Before running you should make sure that within training_objects.py the variable "map_path" is set to a folder which contains your maps which are grouped by catagory. An example folder structure is as follows:
+
+├── maps
+│   ├── Rings
+│   │   ├── rings_map_1.udk
+│   │   ├── rings_map_2.udk
+│   │   └── etc
+│   │ 
+│   ├── Dribble
+│   │   ├── dribble_map_1.udk
+│   │   ├── dribble_map_2.udk
+│   │   └── etc
+│   └── Other
+│       ├── any_other_maps.udk
+│       └── etc
+│
+├── shitty_icon.ico
+├── main.py
+├── training_objects.py
+└── training_generation.py
+
+To add any other workshop maps, just dump them in whatever folder you think they belong. To add training sequences, open training_objects.py and add them to the dictionaries found in there.
+
+Within training_generation.py you can find the 4 training sequences defined as lists of TrainingObjects. At the moment the GUI only accepts 4 training plans max. When adding TrainingObjects to the list, there are a number of ways you can specify what training you'd like to do:
+
+TrainingObject() - completely random, map or pack, for a time between 5 and 15 minutes
+
+TrainingObject(training_type = "Map"/"Pack") - will randomly create a training exercise which is either a Map or Pack (choose one)
+
+TrainingObject(training_type = "Pack", category="General Shooting") - random training pack from the "General Shooting" dictionary - can insert any dictionary name inplace of general shooting
+
+TrainingObject(training_type = "Map", category="Rings") - random workshop map from the rings folder
+
+TrainingObject(training_type = "Map"/"Pack", name="map/pack name") - will select a map/pack of the name "map/pack name"
+
+Note: exercise_time=numb is usually added to each of the TrainingObjects to specify how long you want the exercise to be. See training_generation.py for some examples of different packs.
+
+
+CONVERSION TO EXE:
+Conversion to a standalong exe is simple using auto-py-to-exe. Install by typing "pip install auto-py-to-exe" into the termninal, then running "auto-py-to-exe" after. Once the GUI has loaded, you want to select:
+"One File"
+"Window Based"
+"Icon" - navigate to whatever ico file you want, a shitty one comes in the repo.
+Click Convert.
