@@ -2,6 +2,9 @@ Python Rocket League Trainer
 
 Allows for custom training sequences (both workshop maps and training packs) to be loaded in a predefined sequence for repeated training. User can define the length of each exercise and the contents which can be left blank (completely random training), have a catagory assigned (e.g. a rings map) or have a specific training pack or workshop map defined.
 
+How to use:
+Run main.py and select a training plan from the 4 shown, this will populate the boxes at the bottom of the GUI showing exactly what each plan contains. Once your happy with the plan, click start and immediately switch to Rocket League with bakkesmod running (press f6 ingame to check if it is injected). The python script will then type all the commands to load the different training packs into the bakkesmod console automatically. Note: not sure how this will work if your a keyboard and mouse player as you might interupt the typing of the input to the console. Works fine with a controller.
+
 Requirements:
   - Rocket League
   - Bakkesmod plugin
