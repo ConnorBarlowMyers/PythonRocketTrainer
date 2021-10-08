@@ -58,4 +58,6 @@ Conversion to a standalong exe is simple using auto-py-to-exe. Install by typing
 "Icon" - navigate to whatever ico file you want, a shitty one comes in the repo.
 Click Convert.
 
+https://pypi.org/project/auto-py-to-exe/
+
 note: if converting to exe, then you want to make sure your map_path variable, and any other paths, are all absolute and not relative.
